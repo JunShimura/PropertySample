@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BoundCount : MonoBehaviour
+namespace BoundsControll
 {
-    [SerializeField]
-    Text outputCounter;
-    DisplayNumber displayNumber;
-    private void Start()
+    public class BoundCount : MonoBehaviour
     {
-        displayNumber = outputCounter.GetComponent<DisplayNumber>();
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        displayNumber.num = displayNumber.num + 1;
+        [SerializeField]
+        Text outputCounter;
+        DisplayNumber displayNumber;
+        private void Start()
+        {
+            displayNumber = outputCounter.GetComponent<DisplayNumber>();
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            displayNumber.num = displayNumber.num + 1;
+        }
     }
 }

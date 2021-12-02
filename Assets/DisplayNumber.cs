@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DisplayNumber : MonoBehaviour
 {
     Text outputText;
+    public string formatString;
     private int _num=0;
     public int num
     {
@@ -16,7 +17,7 @@ public class DisplayNumber : MonoBehaviour
         set
         {
             _num=value;
-            outputText.text = num.ToString("D6");
+            outputText.text = num.ToString(formatString);
         }
     }
     // Start is called before the first frame update
