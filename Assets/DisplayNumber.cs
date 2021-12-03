@@ -16,8 +16,11 @@ public class DisplayNumber : MonoBehaviour
         }
         set
         {
-            _num=value;
-            outputText.text = num.ToString(formatString);
+            if (_num != value)
+            {
+                _num = value;
+                outputText.text = num.ToString(formatString);
+            }
         }
     }
     // Start is called before the first frame update
