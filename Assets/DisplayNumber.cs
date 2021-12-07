@@ -19,7 +19,7 @@ public class DisplayNumber : MonoBehaviour
             if (_num != value)
             {
                 _num = value;
-                outputText.text = num.ToString(formatString);
+                TextOutput();
             }
         }
     }
@@ -27,5 +27,13 @@ public class DisplayNumber : MonoBehaviour
     void Awake()
     {
         outputText = GetComponent<Text>();
+    }
+    private void OnEnable()
+    {
+        TextOutput();
+    }
+    private void TextOutput()
+    {
+        outputText.text = num.ToString(formatString);
     }
 }
