@@ -7,11 +7,14 @@ namespace BoundsControll
 {
     public class BoundCount : MonoBehaviour
     {
+        private int count = 0;
         [SerializeField]
         DisplayNumber displayNumber;
         private void OnCollisionEnter(Collision collision)
         {
-            displayNumber.num = displayNumber.num + 1;
+            count++;
+            displayNumber.num = count;
+            //displayNumber.num = displayNumber.num + 1;
         }
     }
 }
